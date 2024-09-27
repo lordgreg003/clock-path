@@ -1,12 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.my-element {
+.my_element {
   background-image: url("/images/Doodle Pattern Palette 2.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 909px;
 }
