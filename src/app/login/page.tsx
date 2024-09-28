@@ -1,5 +1,11 @@
-import LoginPage from "../ui/landingpage/login";
-
+import LoginPage from "../ui/component/authcomponent/login";
+import Nav from "../ui/component/layoutcomponent/Nav";
+ 
 export default function Page() {
-  return <LoginPage />;
+  return (
+    <div className="bg-white md:bg-primary-primary50 h-screen">
+      <Nav />
+      <LoginPage />
+    </div>
+  );
 }
