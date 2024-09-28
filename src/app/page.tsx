@@ -6,7 +6,7 @@ import {
   playfair_Display,
 } from "./ui/fonts/fonts";
 import styles from "@/app/ui/home.module.css";
-import { useState } from "react";
+import Link from "next/link";
 
 export default function MyHeader() {
   return (
@@ -34,12 +34,18 @@ export default function MyHeader() {
               <li className="font-normal ">Pricing</li>
             </ul>
             <div className="hidden md:flex md:*:flex-1 md:gap-5 ">
-              <button className="border-2 border-[#6200EE] p-[.5em_1em] rounded-xl text-[#6200EE]">
+              <Link
+                href="/contactUs"
+                className="border-2 border-[#6200EE] p-[.5em_1em] rounded-xl text-[#6200EE]"
+              >
                 Contact Us
-              </button>
-              <button className="bg-[#6200EE] text-white p-[.5em_1.5em] rounded-xl">
+              </Link>
+              <Link
+                href="/login"
+                className="bg-[#6200EE] text-white p-[.5em_1.5em] rounded-xl"
+              >
                 Login
-              </button>
+              </Link>
             </div>
             <button className="lg:hidden p-2 bg-red-500">
               <Image
@@ -47,7 +53,7 @@ export default function MyHeader() {
                 width={6}
                 height={6}
                 alt="logo for navigation"
-                className="w-6 h-6 self-center"
+                className="w-6 h-6 "
               />
             </button>
           </nav>
