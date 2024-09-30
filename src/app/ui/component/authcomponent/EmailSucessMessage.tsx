@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { playfair, open_sans } from "@/app/ui/fonts/fonts";
 
-const SucessMessage = () => {
+const EmailSucessMessage = () => {
   return (
     <div className=" h-[40rem] bg-primary-primary50   md:h-[39.5rem] w-full flex items-center justify-center">
       <div className="w-full bg-white flex flex-col items-center justify-center   max-w-[39rem] h-[30rem]">
@@ -23,13 +23,13 @@ const SucessMessage = () => {
               <h1
                 className={`${playfair.className} font-bold text-[24px] text-lineHeight-[31.99px] text-[#333333]`}
               >
-                Password Set Successfully!
+                Email Verified Successfully!{" "}
               </h1>
               <p
                 className={`${open_sans.className} font-normal text-[16px] text-lineHeight-[21.79px] text-[#5C5C5C]`}
               >
-                Your account is now secure. You're all set to log in and start
-                using ClockPath
+                Your email has been successfully verified. login to continue
+                with ClockPath
               </p>
             </div>
             <div className="h-[6rem] flex items-center justify-center">
@@ -46,4 +46,4 @@ const SucessMessage = () => {
   );
 };
 
-export default SucessMessage;
+export default EmailSucessMessage;

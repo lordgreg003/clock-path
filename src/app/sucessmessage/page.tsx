@@ -4,7 +4,7 @@ import SucessMessage from "@/app/ui/component/authcomponent/SucessMessage";
 
 const page = () => {
   return (
-    <div>
+    <div className="bg-white md:bg-primary-primary50 h-screen">
       <Nav />
       <SucessMessage />
     </div>
