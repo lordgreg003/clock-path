@@ -7,6 +7,7 @@ import {
 } from "./ui/fonts/fonts";
 import styles from "@/app/ui/home.module.css";
 import Link from "next/link";
+import React from "react";
 
 export default function MyHeader() {
   return (
@@ -47,7 +48,7 @@ export default function MyHeader() {
                 Login
               </Link>
             </div>
-            <button className="lg:hidden p-2">
+            <button className="lg:hidden w-12 p-2">
               <Image
                 src="/images/icons/menu.svg"
                 width={6}
@@ -133,11 +134,191 @@ export default function MyHeader() {
               <div className="space-y-4 leading-tight">
                 <div className="">
                   <h1
-                    className={`${playfair_Display.className} font-bold text-[2rem] text-center md:text-left relative`}
+                    className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center md:text-left`}
                   >
-                    <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-[65%] before:bg-[#FFCF88] before:z-[-10]">
-                      Time Tracking Simplified
-                    </span>
+                    <div className="relative inline-block whitespace-nowrap">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Time Tracking{" "}
+                      </span>
+                    </div>
+                    <div className="relative inline-block">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Simplified
+                      </span>
+                    </div>
+                  </h1>
+                  <p
+                    className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
+                  >
+                    Track Time, Stay Efficient
+                  </p>
+                </div>
+                <div className="space-y-5">
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0`}
+                  >
+                    <Image
+                      src="/images/Frame 1618868008.png"
+                      width={48}
+                      height={48}
+                      alt="a clock logo"
+                      className="self-start"
+                    />
+                    <p className="w-[50%]  max-w-[700px] ">
+                      Employees can clock in and out with ease using the
+                      ClockPath mobile app
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                  >
+                    {" "}
+                    <Image
+                      src="/images/Frame 1618868008 (1).png"
+                      width={48}
+                      height={48}
+                      alt="a clock logo"
+                      className="self-start"
+                    />
+                    <p className="w-[50%] max-w-[700px]">
+                      GPS-based manual entries ensure accuracy for remote teams
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                  >
+                    <div>
+                      {" "}
+                      <Image
+                        src="/images/Frame 1618868008 (2).png"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%]">
+                      View detailed clock-in and clock-out histories
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="bg-[#EFE6FD] rounded-xl h-[400px] flex justify-center">
+                  {" "}
+                  <Image
+                    src="/images/Dashboard.png"
+                    width={572}
+                    height={407}
+                    alt="a clock logo"
+                    className="self-end"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10 bg-green-500">
+              <div>
+                {" "}
+                <div className="bg-[#EFE6FD] rounded-xl h-[400px] flex justify-center">
+                  {" "}
+                  <Image
+                    src="/images/Dashboard.png"
+                    width={572}
+                    height={407}
+                    alt="a clock logo"
+                    className="self-end"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 leading-tight bg-blue-500">
+                <div className="">
+                  <h1
+                    className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center md:text-left`}
+                  >
+                    <div className="relative inline-block whitespace-nowrap">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Time Tracking{" "}
+                      </span>
+                    </div>
+                    <div className="relative inline-block">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Simplified
+                      </span>
+                    </div>
+                  </h1>
+                  <p
+                    className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
+                  >
+                    Track Time, Stay Efficient
+                  </p>
+                </div>
+                <div className="space-y-5">
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0`}
+                  >
+                    <Image
+                      src="/images/Frame 1618868008.png"
+                      width={48}
+                      height={48}
+                      alt="a clock logo"
+                      className="self-start"
+                    />
+                    <p className="w-[50%]  max-w-[700px] ">
+                      Employees can clock in and out with ease using the
+                      ClockPath mobile app
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                  >
+                    {" "}
+                    <Image
+                      src="/images/Frame 1618868008 (1).png"
+                      width={48}
+                      height={48}
+                      alt="a clock logo"
+                      className="self-start"
+                    />
+                    <p className="w-[50%] max-w-[700px]">
+                      GPS-based manual entries ensure accuracy for remote teams
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                  >
+                    <div>
+                      {" "}
+                      <Image
+                        src="/images/Frame 1618868008 (2).png"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%]">
+                      View detailed clock-in and clock-out histories
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10">
+              <div className="space-y-4 leading-tight">
+                <div className="">
+                  <h1
+                    className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center md:text-left`}
+                  >
+                    <div className="relative inline-block whitespace-nowrap">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Time Tracking{" "}
+                      </span>
+                    </div>
+                    <div className="relative inline-block">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Simplified
+                      </span>
+                    </div>
                   </h1>
                   <p
                     className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
