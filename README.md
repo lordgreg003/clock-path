@@ -14,7 +14,7 @@ ClockPath is a web application designed specifically for company staff to effici
 - TypeScript
 - Redux Toolkit
 - Tailwind CSS
-- MongoDb
+- PostgresSQL
 
 ## Getting Started
 
