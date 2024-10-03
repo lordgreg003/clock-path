@@ -37,6 +37,10 @@ const config: Config = {
           custom1: "31.99px",
         },
       },
+      fontFamily: {
+        playfair: "[var(--font-playfair)]",
+        playfair_Display: "[var(--font-playfair_Display)]",
+      },
     },
   },
   plugins: [],

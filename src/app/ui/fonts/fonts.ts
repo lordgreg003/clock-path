@@ -17,6 +17,7 @@ export const lusitana = Lusitana({
 export const playfair = Playfair({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 export const coustard = Coustard({
@@ -32,4 +33,5 @@ export const open_sans = Open_Sans({
 export const playfair_Display = Playfair_Display({
   weight: ["700"],
   subsets: ["latin"],
+  variable: "--font-playfair_Display",
 });
