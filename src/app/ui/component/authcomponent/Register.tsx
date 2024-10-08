@@ -1,159 +1,146 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; // Importing eye icons
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import React from "react";
 import { playfair, open_sans } from "@/app/ui/fonts/fonts";
 import Link from "next/link";
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false); // State to handle password visibility
-  const [password, setPassword] = useState(""); // State for password input
-  const [passwordError, setPasswordError] = useState(""); // State for password error
-  const [confirmPassword, setConfirmPassword] = useState(""); // State for confirm password input
-  const [confirmPasswordError, setConfirmPasswordError] = useState(""); // State for confirm password error
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
-  // Handle password change and validation
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputPassword = e.target.value;
-
-    // Restrict to 8 characters max
     if (inputPassword.length <= 8) {
       setPassword(inputPassword);
     }
-
-    // Show error only when the password length is exactly 8 characters
-    if (inputPassword.length === 8) {
-      setPasswordError("Minimum of 8 characters");
-    } else {
-      setPasswordError(""); // Clear error when it's not exactly 8 characters
-    }
+    setPasswordError(
+      inputPassword.length === 8 ? "Minimum of 8 characters" : ""
+    );
   };
 
-  // Handle confirm password change and validation
   const handleConfirmPasswordChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const inputConfirmPassword = e.target.value;
-
-    // Restrict to 8 characters max
     if (inputConfirmPassword.length <= 8) {
       setConfirmPassword(inputConfirmPassword);
     }
-
-    // Check if confirm password matches the password
-    if (
-      inputConfirmPassword.length === 8 &&
-      inputConfirmPassword !== password
-    ) {
-      setConfirmPasswordError("Passwords do not match");
-    } else {
-      setConfirmPasswordError(""); // Clear error when it matches or is not exactly 8 characters
-    }
+    setConfirmPasswordError(
+      inputConfirmPassword.length === 8 && inputConfirmPassword !== password
+        ? "Passwords do not match"
+        : ""
+    );
   };
 
   return (
-    <div className="bg-primary-primary50 h-[55rem]  w-full flex flex-col items-center justify-center">
-      <div className="w-full bg-white flex justify-center items-center  max-w-[39rem] h-[50rem] md:h-[53rem]">
-        <div className="w-[95%] flex flex-col justify-center items-center space-y-2 h-[49rem] md:h-[50rem]">
-          <div className="w-[90%] h-[20%] text-center shrink">
+    <div className="bg-white  md:bg-primary-primary50 h-[30rem] lg:h-[32rem] w-full flex items-center justify-center p-4">
+      <div className="w-full bg-white flex justify-center items-center h-[31rem] max-w-[28rem] p-4 shadow-lg rounded-xl">
+        <div className="w-full flex flex-col items-center space-y-4">
+          <div className="w-full text-center">
             <h1
-              className={`${playfair.className} font-bold text-[28px] text-lineHeight-[37.32px] text-[#333333]`}
+              className={`${playfair.className} font-bold text-[24px] text-[#333333]`}
             >
               Create Your Account
             </h1>
             <p
-              className={`${open_sans.className} font-normal text-[16px] text-[#5C5C5C] text-lineHeight-[21.79px] flex-shrink`}
+              className={`${open_sans.className} font-normal text-[14px] text-[#5C5C5C]`}
             >
               Enter your credentials to create your HR Admin account
             </p>
           </div>
-          <div className="w-[90%] h-[80%]">
-            <div className="h-[8rem] w-full">
+
+          <div className="w-full space-y-4">
+            <div>
               <h1
-                className={`${open_sans.className} font-semibold text-[16px] text-lineHeight-[21.79px]`}
+                className={`${open_sans.className} font-semibold text-[14px]`}
               >
                 Full Name
               </h1>
-              <div className="h-[5rem] relative border-2 border-[#CCCCCC] rounded-[16px]">
+              <div className="relative border-2 border-[#CCCCCC] rounded-lg">
                 <input
-                  className="w-full transform translate-y-1 h-[4rem] pl-4 text-[14px] absolute outline-none rounded-[16px]"
+                  className="w-full h-10 p-2 text-[14px] outline-none rounded-lg"
                   type="text"
                   placeholder="E.g John Doe"
                 />
               </div>
             </div>
-            <div className="h-[8rem] w-full">
+
+            <div>
               <h1
-                className={`${open_sans.className} font-semibold text-[16px] text-lineHeight-[21.79px]`}
+                className={`${open_sans.className} font-semibold text-[14px]`}
               >
                 Email Address
               </h1>
-              <div className="h-[5rem] relative border-2 border-[#CCCCCC] rounded-[16px]">
+              <div className="relative border-2 border-[#CCCCCC] rounded-lg">
                 <input
-                  className="w-full transform translate-y-1 h-[4rem] pl-4 text-[14px] absolute outline-none rounded-[16px]"
+                  className="w-full h-10 p-2 text-[14px] outline-none rounded-lg"
                   type="email"
                   placeholder="E.g JohnDoe@gmail.com"
                 />
               </div>
             </div>
-            <div className="h-[8rem] w-full">
+
+            <div>
               <h1
-                className={`${open_sans.className} font-semibold text-[16px] text-lineHeight-[21.79px]`}
+                className={`${open_sans.className} font-semibold text-[14px]`}
               >
                 New Password
               </h1>
-              <div className="relative h-[5rem] rounded-[16px] border-2 border-[#CCCCCC]">
+              <div className="relative border-2 border-[#CCCCCC] rounded-lg">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter password"
-                  className="w-full h-[4rem] transform translate-y-1 pl-4 text-[14px] absolute outline-none rounded-[16px]"
+                  className="w-full h-10 p-2 text-[14px] outline-none rounded-lg"
                   value={password}
-                  onChange={handlePasswordChange} // Add change handler
+                  onChange={handlePasswordChange}
                 />
                 <span
-                  className="absolute right-2 top-1/2 transform -translate-y-4 cursor-pointer"
-                  onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+                  className="absolute right-2 top-2/4 transform -translate-y-2 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <AiOutlineEyeInvisible className="text-3xl text-[#5F6774]" />
+                    <AiOutlineEyeInvisible className="text-2xl text-[#5F6774]" />
                   ) : (
-                    <AiOutlineEye className="text-3xl text-[#5F6774]" />
+                    <AiOutlineEye className="text-2xl text-[#5F6774]" />
                   )}
                 </span>
               </div>
-              {/* Conditionally render the error message */}
               {passwordError && (
                 <p className="text-red-500 text-right text-sm mt-1">
                   {passwordError}
                 </p>
               )}
             </div>
-            <div className="h-[8rem] w-full">
+
+            <div>
               <h1
-                className={`${open_sans.className} font-semibold text-[16px] text-lineHeight-[21.79px]`}
+                className={`${open_sans.className} font-semibold text-[14px]`}
               >
                 Confirm Password
               </h1>
-              <div className="relative h-[5rem] rounded-[16px] border-2 border-[#CCCCCC]">
+              <div className="relative border-2 border-[#CCCCCC] rounded-lg">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm password"
-                  className="w-full h-[4rem] transform translate-y-1 pl-4 text-[14px] absolute outline-none rounded-[16px]"
+                  className="w-full h-10 p-2 text-[14px] outline-none rounded-lg"
                   value={confirmPassword}
-                  onChange={handleConfirmPasswordChange} // Add change handler
+                  onChange={handleConfirmPasswordChange}
                 />
                 <span
-                  className="absolute right-2 top-1/2 transform -translate-y-4 cursor-pointer"
-                  onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+                  className="absolute right-2 top-2/4 transform -translate-y-2 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <AiOutlineEyeInvisible className="text-3xl text-[#5F6774]" />
+                    <AiOutlineEyeInvisible className="text-2xl text-[#5F6774]" />
                   ) : (
-                    <AiOutlineEye className="text-3xl text-[#5F6774]" />
+                    <AiOutlineEye className="text-2xl text-[#5F6774]" />
                   )}
                 </span>
               </div>
-              {/* Conditionally render the error message */}
               {confirmPasswordError && (
                 <p className="text-red-500 text-right text-sm mt-1">
                   {confirmPasswordError}
@@ -161,27 +148,22 @@ const Register = () => {
               )}
             </div>
           </div>
-          <div className="h-[6rem] space-y-2 w-[95%] flex flex-col items-center justify-center">
+
+          <div className="w-full space-y-2 flex flex-col items-center">
             <button
-              className={`${open_sans.className} bg-[#6200EE] font-semibold text-[18px] rounded-xl text-white h-[4rem] w-full  max-w-[28rem]`}
+              className={`${open_sans.className} bg-[#6200EE] font-semibold text-[16px] rounded-lg text-white h-12 w-full`}
             >
               Sign Up
             </button>
-            <div>
-              <p
-                className={`${open_sans.className} text-[12px] font-normal text-lineHeight-[16.34px] text-[#5C5C5C]`}
+            <p className={`${open_sans.className} text-[12px] text-[#5C5C5C]`}>
+              Already have an account?
+              <Link
+                href={"/login"}
+                className="text-[#6200EE] ml-2 font-semibold"
               >
-                Already have an account?
-                <span className="ml-3">
-                  <Link
-                    className={`${open_sans.className} font-semibold text-[12px] text-lineHeight-[16.34px] text-[#6200EE]`}
-                    href={"/login"}
-                  >
-                    Login
-                  </Link>
-                </span>
-              </p>
-            </div>
+                Login
+              </Link>
+            </p>
           </div>
         </div>
       </div>
