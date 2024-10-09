@@ -1,5 +1,5 @@
 "use client";
-import { playfair, open_sans } from "@/app/ui/fonts/fonts";
+import { playfair, open_sans } from "@/ui/fonts/fonts";
 
 const ForgottenPassword = () => {
   return (

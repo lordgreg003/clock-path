@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { open_sans, playfair_Display } from "@/app/ui/fonts/fonts";
+import { open_sans, playfair_Display } from "@/ui/fonts/fonts";
 import { FaArrowRight } from "react-icons/fa6";
 import { GrStatusGood } from "react-icons/gr";
 import Link from "next/link";

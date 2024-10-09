@@ -1,5 +1,5 @@
 "use client";
-import { playfair, open_sans } from "@/app/ui/fonts/fonts";
+import { playfair, open_sans } from "@/ui/fonts/fonts";
 import React from "react";
 import { useState } from "react";
 const One_time_Verification = () => {

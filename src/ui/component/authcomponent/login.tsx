@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { playfair, open_sans } from "@/app/ui/fonts/fonts";
+import { playfair, open_sans } from "@/ui/fonts/fonts";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 

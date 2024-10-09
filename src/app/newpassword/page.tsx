@@ -1,5 +1,6 @@
-import Nav from "@/app/ui/component/layoutcomponent/Nav";
-import NewPassword from "@/app/ui/component/authcomponent/NewPassword";
+import NewPassword from "@/ui/component/authcomponent/NewPassword";
+import Nav from "@/ui/component/layoutcomponent/Nav";
+
 const page = () => {
   return (
     <div className="bg-white md:bg-primary-primary50 h-screen">

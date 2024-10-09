@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { playfair, open_sans } from "@/app/ui/fonts/fonts";
+import { playfair, open_sans } from "@/ui/fonts/fonts";
 
 const SuccessMessage = () => {
   return (

@@ -4,8 +4,8 @@ import {
   open_sans,
   playfair,
   playfair_Display,
-} from "./ui/fonts/fonts";
-import styles from "@/app/ui/home.module.css";
+} from "@/ui/fonts/fonts";
+import styles from "@/ui/home.module.css";
 import Link from "next/link";
 import React from "react";
 

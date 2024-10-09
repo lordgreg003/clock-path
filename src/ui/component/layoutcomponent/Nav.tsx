@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { coustard } from "@/app/ui/fonts/fonts";
+import { coustard } from "@/ui/fonts/fonts";
 
 const Nav = () => {
   return (
