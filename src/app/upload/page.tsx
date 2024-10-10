@@ -1,3 +1,4 @@
+"use claint";
 import UploadEmployees from "@/ui/component/uploadEmployee/UploadEmployees";
 import React from "react";
 
