@@ -1,5 +1,5 @@
-import SetupCompany from "@/ui/component/companyComponent/setup-company";
 import React from "react";
+import SetupCompany from "../ui/component/companyComponent/setup-company";
 
 const page = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import Plans from "@/ui/component/subscribeComponent/Plans";
+import Plans from "@/app/ui/component/subscribeComponent/Plans";
 
 const page = () => {
   return (

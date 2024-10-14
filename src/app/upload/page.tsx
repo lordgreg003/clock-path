@@ -1,5 +1,5 @@
 "use claint";
-import UploadEmployees from "@/ui/component/uploadEmployee/UploadEmployees";
+import UploadEmployees from "@/app/ui/component/uploadEmployee/UploadEmployees";
 import React from "react";
 
 const page = () => {

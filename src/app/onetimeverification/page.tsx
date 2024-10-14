@@ -1,5 +1,5 @@
-import One_time_Verification from "@/ui/component/authcomponent/One_time_Verification";
-import Nav from "@/ui/component/layoutcomponent/Nav";
+import Nav from "@/app/ui/component/layoutcomponent/Nav";
+import One_time_Verification from "../ui/component/authcomponent/One_time_Verification";
 
 const page = () => {
   return (

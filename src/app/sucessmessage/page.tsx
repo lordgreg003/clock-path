@@ -1,5 +1,5 @@
-import SucessMessage from "@/ui/component/authcomponent/SucessMessage";
-import Nav from "@/ui/component/layoutcomponent/Nav";
+import SucessMessage from "@/app/ui/component/authcomponent/SucessMessage";
+import Nav from "@/app/ui/component/layoutcomponent/Nav";
 import React from "react";
 
 const page = () => {

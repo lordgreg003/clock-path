@@ -1,5 +1,5 @@
-import Register from "@/ui/component/authcomponent/Register";
-import Nav from "@/ui/component/layoutcomponent/Nav";
+import Register from "@/app/ui/component/authcomponent/Register";
+import Nav from "@/app/ui/component/layoutcomponent/Nav";
 
 const page = () => {
   return (

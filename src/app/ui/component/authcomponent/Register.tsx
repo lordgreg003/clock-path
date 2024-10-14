@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import React from "react";
-import { playfair, open_sans } from "@/ui/fonts/fonts";
+import { playfair, open_sans } from "@/app/ui/fonts/fonts";
 import Link from "next/link";
 
 const Register = () => {
