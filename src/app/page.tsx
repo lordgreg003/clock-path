@@ -5,7 +5,7 @@ import {
   playfair,
   playfair_Display,
 } from "@/app/ui/fonts/fonts";
-import styles from "@/ui/home.module.css";
+import styles from "@/app/ui/home.module.css";
 import Link from "next/link";
 import React from "react";
 
