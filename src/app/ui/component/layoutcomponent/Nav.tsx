@@ -4,7 +4,7 @@ import { coustard } from "@/app/ui/fonts/fonts";
 
 const Nav = () => {
   return (
-    <div className="flex h-[6rem]   items-center justify-center">
+    <div className="flex h-[6rem]  w-full  items-center justify-center">
       <Image
         src="/images/icons/clock.svg"
         width={39}

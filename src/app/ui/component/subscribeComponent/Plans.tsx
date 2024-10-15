@@ -1,109 +1,132 @@
-"use client";
-import React from "react";
-import { open_sans, playfair_Display } from "@/app/ui/fonts/fonts";
-import { FaArrowRight } from "react-icons/fa6";
-import { GrStatusGood } from "react-icons/gr";
 import Link from "next/link";
+import { useState } from "react";
+import { open_sans, playfair_Display } from "@/app/ui/fonts/fonts";
+import { GrStatusGood } from "react-icons/gr";
 
-const Plans = () => {
+const plans = [
+  {
+    mainTitle: "Current Plan",
+    title: "Free Plan",
+    price: "0 NGN",
+    description: "Manage up to 10 employees",
+    isActive: true,
+  },
+  {
+    title: "Standard Plan",
+    price: "10,000 NGN",
+    description: "Manage up to 50 employees",
+    buttonText: "Get Standard",
+    isActive: false,
+  },
+  {
+    title: "Premium Plan",
+    price: "20,000 NGN",
+    description: "Manage up to 100 employees",
+    buttonText: "Get Premium",
+    isActive: false,
+  },
+  {
+    title: "Enterprise Plan",
+    price: "Contact Sales",
+    description: "Manage up to 100+ employees",
+    buttonText: "Contact Sales",
+    isActive: false,
+  },
+];
+
+const PlanScreen = () => {
+  const [selectedPlan, setSelectedPlan] = useState(plans[0]);
+
+  const handlePlanSelection = (plan: (typeof plans)[0]) => {
+    setSelectedPlan(plan);
+  };
+
   return (
-    <div className="bg-primary-primary50 h-screen">
-      <div className="h-[15%] flex items-center justify-end w-full">
-        <div className="flex mr-10 justify-center items-center">
-          <div
-            className={`${open_sans.className} font-semibold text-[18px] text-lineHeight-[24.51px] text-[#6200EE]`}
-          >
-            Skip
-          </div>
-          <FaArrowRight className="text-[24px] text-[#6200EE]" />
-        </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#f5f5f5] py-8 px-4">
+      {/* Top navigation */}
+      <div className="w-full flex justify-end mb-4">
+        <Link href="/skip">
+          <span className="text-purple-500 font-semibold hover:underline cursor-pointer">
+            Skip &rarr;
+          </span>
+        </Link>
       </div>
-      <div className="h-screen flex justify-center items-center  w-full">
-        <div className="w-[95%] flex flex-col  gap-3 items-center h-screen">
-          <div className=" p-2 text-center max-w-[50rem] mt-3">
+
+      {/* Heading */}
+      <h1
+        className={`${playfair_Display.className} mb-5 font-bold text-[23px] leading-[25px] md:text-[30px]   lg:text-[36px]  `}
+      >
+        Choose your Subscription plan
+      </h1>
+      <p
+        className={`${open_sans.className} font-normal text-[18px] text=[#5C5C5C] mb-10`}
+      >
+        Select the subscription plan that best suits your needs and continue
+        with ClockPath.
+      </p>
+
+      {/* Plan Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:grid-cols-4 gap-6 w-full max-w-[64rem] ">
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className={`border-2 w-[15rem] h-[20rem] rounded-xl shadow-md bg-white hover:shadow-lg cursor-pointer ${
+              plan.isActive ? "border-[#6200EE]" : "border-gray-200"
+            }`}
+            onClick={() => handlePlanSelection(plan)}
+          >
+            {" "}
             <h1
-              className={`${playfair_Display} font-bold text-[#333333] 
-             text-[20px] leading-[30px] sm:text-[30px] sm:leading-[36px] 
-             md:text-[36px] md:leading-[47.99px] lg:text-[40px] lg:leading-[50px]`}
+              className={`${open_sans.className} mx-auto text-[#6200EE] rounded-t-xl font-normal text-[18px] w-full bg-[#EFE6FD] p-4`}
             >
-              Choose your Subscription plan
+              {plan.mainTitle || ""}
             </h1>
-            <p
-              className={`${open_sans.className} font-normal text-[16px] 
-      leading-[22px] sm:text-[18px] sm:leading-[24.51px] text-[#5C5C5C]`}
-            >
-              Select the subscription plan that best suits your needs and
-              continue with ClockPath
-            </p>
-          </div>
-          <div className=" flex flex-wrap w-full justify-center gap-6">
-            <Link href={"/login"}>
-              <div className="border-2 h-[20rem] w-[15rem] transform transition duration-300 hover:scale-110 cursor-pointer border-[#E0E0E0] hover:border-[#6200EE] rounded-xl">
-                <h1
-                  className={` ${open_sans.className} flex items-center rounded-t-xl font-normal text-[#6200EE] bg-[#EFE6FD] h-[20%] px-3 text-[18px]`}
+            <div className="h-[80%] bg-yellow-400">
+              <h3
+                className={`${open_sans.className} mx-4 font-normal text-[24px] text-[#333333]`}
+              >
+                {plan.title}
+              </h3>
+              <p
+                className={`${open_sans.className} mx-4 font-normal text-[24px] text-[#6200EE]`}
+              >
+                {plan.price}{" "}
+                <span className="text-[#333333] text-bold text-[24px]">/</span>{" "}
+                <span className={`${open_sans} text-base text-[#333333]`}>
+                  month
+                </span>
+              </p>
+              <div className="flex mx-4 mt-5 flex-row gap-1 ">
+                <GrStatusGood className="mt-1 text-[#6200EE]" />
+                <p className="text-gray-600 mb-4">{plan.description}</p>
+              </div>
+              {plan.buttonText && (
+                <button
+                  className={`w-full py-2 px-4 rounded-md ${
+                    plan.isActive
+                      ? "bg-[#6200EE] text-white"
+                      : "border border-[#6200EE] text-[#6200EE] hover:bg-purple-50"
+                  }`}
                 >
-                  Current Plan
-                </h1>
-                <div className="flex  justify-center items-start h-[80%] w-full">
-                  <div className=" flex flex-col space-y-3  h-[70%] w-[90%]">
-                    <div className="">
-                      <h1
-                        className={`${open_sans} font-normal text-[24px] text-[#333333]`}
-                      >
-                        Free Plan
-                      </h1>
-                      <h2
-                        className={`${open_sans} text-[#6200EE] text-[24px] text-lineHeight-[32.68px] font-bold`}
-                      >
-                        0 NGN
-                        <span
-                          className={`${open_sans} text-[#333333] text-[24px] text-lineHeight-[32.68px] font-bold`}
-                        >
-                          /
-                        </span>
-                        <span
-                          className={`${open_sans} text-[#333333] font-normal text-[16px] text-lineHeight-[32.68px]`}
-                        >
-                          month
-                        </span>
-                      </h2>
-                    </div>
-                    <hr className="text-[#E0E0E0]" />
-                    <div className="flex ">
-                      <GrStatusGood className="mt-1" />
-                      <p
-                        className={`${open_sans.className} font-normal ttext-[18px] text-[#5C5C5C]`}
-                      >
-                        Manage up to 10 employees
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link href={"/login"}>
-              <div className="border-2 border-[#E0E0E0] hover:border-[#6200EE] rounded-xl h-[20rem] w-[15rem] flex items-center justify-center transform transition duration-300 hover:scale-110 cursor-pointer">
-                <div className="w-[90%] h-[80%] border-2 border-black">
-                  <div className=""></div>
-                  <div className=""></div>
-                </div>
-              </div>
-            </Link>
-            <Link href={"/login"}>
-              <div className="border-2 border-[#E0E0E0] hover:border-[#6200EE] rounded-xl h-[20rem] w-[15rem] flex items-center justify-center transform transition duration-300 hover:scale-110 cursor-pointer">
-                <div className="w-[90%] h-[80%] border-2 border-black"></div>
-              </div>
-            </Link>
-            <Link href={"/login"}>
-              <div className="border-2 border-[#E0E0E0] hover:border-[#6200EE] rounded-xl h-[20rem] w-[15rem] flex items-center justify-center transform transition duration-300 hover:scale-110 cursor-pointer">
-                <div className="w-[90%] h-[80%] border-2 border-black"></div>
-              </div>
-            </Link>
+                  {plan.buttonText}
+                </button>
+              )}
+            </div>
           </div>
-        </div>
+        ))}
+      </div>
+
+      {/* Continue Button */}
+      <div className="mt-8 w-full max-w-md">
+        <button
+          className="w-full py-3 bg-[#6200EE] text-white font-bold rounded-lg hover:bg-purple-700"
+          onClick={() => console.log("Selected Plan: ", selectedPlan)}
+        >
+          Continue
+        </button>
       </div>
     </div>
   );
 };
 
-export default Plans;
+export default PlanScreen;

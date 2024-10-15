@@ -3,7 +3,7 @@ import { playfair, open_sans } from "@/app/ui/fonts/fonts";
 
 const ForgottenPassword = () => {
   return (
-    <div className="bg-white md:bg-primary-primary50 h- w-full h-[40rem] lg:h-[30rem] flex flex-col items-center justify-center overflow-hidden">
+    <div className="bg-white md:bg-primary-primary50 h- w-full h-[30rem] lg:h-[30rem] flex flex-col items-center justify-center overflow-hidden">
       <div className="w-full bg-white flex flex-col justify-center items-center max-w-[36rem] lg:h-[70%] rounded-xl h-[59%]">
         <div className="w-full h-full space-y-4 flex flex-col justify-center items-center px-4">
           <div className="text-center">
