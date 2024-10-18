@@ -54,7 +54,7 @@ const Payment = () => {
     <div className="min-h-screen flex flex-col items-center  bg-primary-primary50 py-8 px-4">
       {/* Back Button */}
       <div className="w-full flex justify-start mb-6">
-        <Link href="/payment" className="flex items-center">
+        <Link href="/plans" className="flex items-center cursor-pointer">
           <div>
             <IoIosArrowRoundBack className="text-2xl text-[#6200EE]" />
           </div>
@@ -65,7 +65,7 @@ const Payment = () => {
       </div>
 
       {/* Payment Form */}
-      <div className="bg-white rounded-lg shadow-md p-6 max-w-md w-full text-center flex flex-col justify-center items-center">
+      <div className="bg-white rounded-md shadow-md p-6 max-w-md w-full text-center flex flex-col justify-center items-center">
         <h2 className="text-xl font-semibold mb-6">Choose How To Pay</h2>
         <p className="text-gray-600 mb-4">Select a payment method to proceed</p>
 
@@ -73,7 +73,7 @@ const Payment = () => {
         {paymentMethods.map((method) => (
           <div
             key={method.id}
-            className={` flex py-3 w-[80%] h-[3rem] items-center flex-row border-2 border-[#CCCCCC] hover:border-[#6200EE] mb-4 rounded-xl group ${
+            className={` flex py-3 w-[80%] h-[3rem] items-center flex-row border-2 border-[#CCCCCC] hover:border-[#6200EE] mb-4 text-sm sm:text-lg whitespace-nowrap md:text-lg rounded-xl group ${
               method.id === selectedMethod ? "border-[#844bd4]" : ""
             }`}
           >
@@ -81,7 +81,7 @@ const Payment = () => {
               type="radio"
               id={method.id}
               name="paymentMethod"
-              className="mx-4 checked:group-[border-red-500]"
+              className="mx-2 sm:mx-3 checked:group-[border-red-500]"
               checked={selectedMethod === method.id}
               onChange={() => handleSelect(method.id)}
             />
@@ -91,11 +91,11 @@ const Payment = () => {
                 selectedMethod === method.id
                   ? "text-purple-600"
                   : "text-gray-700"
-              } flex items-center gap-5  w-[80%]  `}
+              } flex items-center sm:gap-5 w-[80%] gap-2  `}
             >
               {method.masterIcon && method.masterIcon}
               {method.visaIcon && method.visaIcon}
-               {method.label}
+              {method.label}
             </label>
           </div>
         ))}
