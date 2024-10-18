@@ -73,15 +73,13 @@ const Payment = () => {
         {paymentMethods.map((method) => (
           <div
             key={method.id}
-            className={` flex py-3 w-[80%] h-[3rem] items-center flex-row border-2 border-[#CCCCCC] hover:border-[#6200EE] mb-4 text-sm sm:text-lg whitespace-nowrap md:text-lg rounded-xl group ${
-              method.id === selectedMethod ? "border-[#844bd4]" : ""
-            }`}
+            className={` flex py-3 w-[80%] h-[3rem] items-center flex-row border-2 border-[#CCCCCC] hover:border-[#6200EE] mb-4 text-sm sm:text-lg whitespace-nowrap md:text-lg rounded-xl group has-[:checked]:bg-indigo-50  has-[:checked]:text-indigo-900 has-[:checked]:border-[#6200EE] `}
           >
             <input
               type="radio"
               id={method.id}
               name="paymentMethod"
-              className="mx-2 sm:mx-3 checked:group-[border-red-500]"
+              className="mx-2 sm:mx-3 "
               checked={selectedMethod === method.id}
               onChange={() => handleSelect(method.id)}
             />
