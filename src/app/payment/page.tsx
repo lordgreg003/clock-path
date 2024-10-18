@@ -1,5 +1,5 @@
 import React from "react";
-import Payment from "../ui/payment/Payment";
+import Payment from "../ui/component/authcomponent/payment/Payment";
 
 const page = () => {
   return (

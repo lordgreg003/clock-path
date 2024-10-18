@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { FaCcVisa, FaCcMastercard } from "react-icons/fa";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
+import Image from "next/image";
+import { GrFormNextLink } from "react-icons/gr";
 
 const Payment = () => {
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
@@ -11,7 +12,23 @@ const Payment = () => {
     {
       id: "card",
       label: "Debit card",
-      icon: <FaCcVisa className="inline mr-2" />,
+
+      visaIcon: (
+        <Image
+          src="/images/Paystack.png"
+          alt="visaCard"
+          width={50}
+          height={50}
+        />
+      ),
+      masterIcon: (
+        <Image
+          src="/images/masterCard.png"
+          alt="masterCard"
+          width={50}
+          height={50}
+        />
+      ),
     },
     { id: "paystack", label: "Paystack" },
     { id: "flutterwave", label: "Flutterwave" },
@@ -25,42 +42,46 @@ const Payment = () => {
     if (!selectedMethod) {
       alert("Please select a payment method");
     } else {
-      // Proceed with the selected method (this is where you'd connect to the API)
       console.log(`Selected Payment Method: ${selectedMethod}`);
-      // Example: redirecting to payment integration
+
       if (selectedMethod === "paystack") {
-        // Redirect to Paystack or call Paystack API here
       } else if (selectedMethod === "flutterwave") {
-        // Redirect to Flutterwave or call Flutterwave API here
       }
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center  bg-gray-500 py-8 px-4">
+    <div className="min-h-screen flex flex-col items-center  bg-primary-primary50 py-8 px-4">
       {/* Back Button */}
-      <div className="w-full flex bg-primary-primary400 justify-start mb-6">
-        <Link href="/plans">
-          <span className="text-gray-500 flex items-center cursor-pointer">
-            <IoIosArrowBack className="mr-2" />
+      <div className="w-full flex justify-start mb-6">
+        <Link href="/payment" className="flex items-center">
+          <div>
+            <IoIosArrowRoundBack className="text-2xl text-[#6200EE]" />
+          </div>
+          <div className="text-[#6200EE] font-semibold hover:underline cursor-pointer">
             Back
-          </span>
+          </div>
         </Link>
       </div>
 
       {/* Payment Form */}
-      <div className="bg-white rounded-lg shadow-md p-6 max-w-md w-full text-center">
+      <div className="bg-white rounded-lg shadow-md p-6 max-w-md w-full text-center flex flex-col justify-center items-center">
         <h2 className="text-xl font-semibold mb-6">Choose How To Pay</h2>
         <p className="text-gray-600 mb-4">Select a payment method to proceed</p>
 
         {/* Payment Methods */}
         {paymentMethods.map((method) => (
-          <div key={method.id} className="flex items-center mb-4">
+          <div
+            key={method.id}
+            className={` flex py-3 w-[80%] h-[3rem] items-center flex-row border-2 border-[#CCCCCC] hover:border-[#6200EE] mb-4 rounded-xl group ${
+              method.id === selectedMethod ? "border-[#844bd4]" : ""
+            }`}
+          >
             <input
               type="radio"
               id={method.id}
               name="paymentMethod"
-              className="mr-2"
+              className="mx-4 checked:group-[border-red-500]"
               checked={selectedMethod === method.id}
               onChange={() => handleSelect(method.id)}
             />
@@ -70,17 +91,18 @@ const Payment = () => {
                 selectedMethod === method.id
                   ? "text-purple-600"
                   : "text-gray-700"
-              } flex items-center`}
+              } flex items-center gap-5  w-[80%]  `}
             >
-              {method.icon && method.icon}
-              {method.label}
+              {method.masterIcon && method.masterIcon}
+              {method.visaIcon && method.visaIcon}
+               {method.label}
             </label>
           </div>
         ))}
 
         {/* Proceed Button */}
         <button
-          className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700"
+          className="w-[80%] h-[3rem] py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700"
           onClick={handleSubmit}
         >
           Proceed
