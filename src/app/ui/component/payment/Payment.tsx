@@ -68,7 +68,6 @@ const Payment = () => {
       <div className="bg-white rounded-md shadow-md p-6 max-w-md w-full text-center flex flex-col justify-center items-center">
         <h2 className="text-xl font-semibold mb-6">Choose How To Pay</h2>
         <p className="text-gray-600 mb-4">Select a payment method to proceed</p>
-
         {/* Payment Methods */}
         {paymentMethods.map((method) => (
           <div
@@ -97,7 +96,6 @@ const Payment = () => {
             </label>
           </div>
         ))}
-
         {/* Proceed Button */}
         <button
           className="w-[80%] h-[3rem] py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700"
@@ -105,6 +103,7 @@ const Payment = () => {
         >
           Proceed
         </button>
+        <div></div>
       </div>
     </div>
   );
