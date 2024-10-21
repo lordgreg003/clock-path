@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { open_sans, playfair_Display } from "@/app/ui/fonts/fonts";
 import { GrStatusGood } from "react-icons/gr";
+import { GrFormNextLink } from "react-icons/gr";
 
 const plans = [
   {
@@ -42,13 +43,16 @@ const PlanScreen = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#f5f5f5] py-8 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-primary-primary50 py-8 px-4">
       {/* Top navigation */}
       <div className="w-full flex justify-end mb-4">
-        <Link href="/skip">
-          <span className="text-purple-500 font-semibold hover:underline cursor-pointer">
-            Skip &rarr;
-          </span>
+        <Link href="/payment" className="flex items-center">
+          <div className="text-[#6200EE] font-semibold hover:underline cursor-pointer">
+            Skip
+          </div>
+          <div>
+            <GrFormNextLink className="text-2xl text-[#6200EE]" />
+          </div>
         </Link>
       </div>
 
@@ -81,7 +85,7 @@ const PlanScreen = () => {
             >
               {plan.mainTitle || ""}
             </h1>
-            <div className="h-[80%] bg-yellow-400">
+            <div className="h-[80%]">
               <h3
                 className={`${open_sans.className} mx-4 font-normal text-[24px] text-[#333333]`}
               >
