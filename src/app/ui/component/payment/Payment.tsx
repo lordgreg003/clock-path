@@ -4,6 +4,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { GrFormNextLink } from "react-icons/gr";
+import { open_sans } from "../../fonts/fonts";
 
 const Payment = () => {
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
@@ -14,12 +15,7 @@ const Payment = () => {
       label: "Debit card",
 
       visaIcon: (
-        <Image
-          src="/images/Paystack.png"
-          alt="visaCard"
-          width={50}
-          height={50}
-        />
+        <Image src="/images/visa.png" alt="visaCard" width={50} height={50} />
       ),
       masterIcon: (
         <Image
@@ -30,7 +26,18 @@ const Payment = () => {
         />
       ),
     },
-    { id: "paystack", label: "Paystack" },
+    {
+      id: "paystack",
+      label: "Paystack",
+      paystackIcon: (
+        <Image
+          src="/images/Paystack.png"
+          alt="visaCard"
+          width={50}
+          height={50}
+        />
+      ),
+    },
     { id: "flutterwave", label: "Flutterwave" },
   ];
 
@@ -56,9 +63,9 @@ const Payment = () => {
       <div className="w-full flex justify-start mb-6">
         <Link href="/plans" className="flex items-center cursor-pointer">
           <div>
-            <IoIosArrowRoundBack className="text-2xl text-[#6200EE]" />
+            <IoIosArrowRoundBack className="text-2xl text-[#5C5C5C] md:ml-10" />
           </div>
-          <div className="text-[#6200EE] font-semibold hover:underline cursor-pointer">
+          <div className={` ${open_sans} text-[#5C5C5C] font-semibold hover:underline cursor-pointer`}>
             Back
           </div>
         </Link>
