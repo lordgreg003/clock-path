@@ -129,7 +129,7 @@ export default function MyHeader() {
           </div>
         </section>
         <section className="p-[4em_0]">
-          <div className="w-[90%] m-[0_auto] max-w-[1750px]">
+          <div className="w-[90%] m-[0_auto] max-w-[1750px]  space-y-16">
             <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10">
               <div className="space-y-4 leading-tight">
                 <div className="">
@@ -216,13 +216,13 @@ export default function MyHeader() {
                 </div>
               </div>
             </div>
-            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10 bg-green-500">
+            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10">
               <div>
                 {" "}
                 <div className="bg-[#EFE6FD] rounded-xl h-[400px] flex justify-center">
                   {" "}
                   <Image
-                    src="/images/Dashboard.png"
+                    src="/images/Out of Office Requests.png"
                     width={572}
                     height={407}
                     alt="a clock logo"
@@ -230,80 +230,6 @@ export default function MyHeader() {
                   />
                 </div>
               </div>
-              <div className="space-y-4 leading-tight bg-blue-500">
-                <div className="">
-                  <h1
-                    className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center md:text-left`}
-                  >
-                    <div className="relative inline-block whitespace-nowrap">
-                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
-                        Time Tracking{" "}
-                      </span>
-                    </div>
-                    <div className="relative inline-block">
-                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
-                        Simplified
-                      </span>
-                    </div>
-                  </h1>
-                  <p
-                    className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
-                  >
-                    Track Time, Stay Efficient
-                  </p>
-                </div>
-                <div className="space-y-5">
-                  <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0`}
-                  >
-                    <Image
-                      src="/images/Frame 1618868008.png"
-                      width={48}
-                      height={48}
-                      alt="a clock logo"
-                      className="self-start"
-                    />
-                    <p className="w-[50%]  max-w-[700px] ">
-                      Employees can clock in and out with ease using the
-                      ClockPath mobile app
-                    </p>
-                  </div>{" "}
-                  <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
-                  >
-                    {" "}
-                    <Image
-                      src="/images/Frame 1618868008 (1).png"
-                      width={48}
-                      height={48}
-                      alt="a clock logo"
-                      className="self-start"
-                    />
-                    <p className="w-[50%] max-w-[700px]">
-                      GPS-based manual entries ensure accuracy for remote teams
-                    </p>
-                  </div>{" "}
-                  <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
-                  >
-                    <div>
-                      {" "}
-                      <Image
-                        src="/images/Frame 1618868008 (2).png"
-                        width={48}
-                        height={48}
-                        alt="a clock logo"
-                        className="self-start"
-                      />
-                    </div>
-                    <p className="w-[50%]">
-                      View detailed clock-in and clock-out histories
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10">
               <div className="space-y-4 leading-tight">
                 <div className="">
                   <h1
@@ -311,59 +237,63 @@ export default function MyHeader() {
                   >
                     <div className="relative inline-block whitespace-nowrap">
                       <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
-                        Time Tracking{" "}
+                        Manage Out-of-Office{" "}
                       </span>
                     </div>
                     <div className="relative inline-block">
                       <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
-                        Simplified
+                        Requests
                       </span>
                     </div>
                   </h1>
                   <p
                     className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
                   >
-                    Track Time, Stay Efficient
+                    Request Holidays, Sick Leave, or Half-Days on the Go
                   </p>
                 </div>
                 <div className="space-y-5">
                   <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0`}
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0 items-center`}
                   >
-                    <Image
-                      src="/images/Frame 1618868008.png"
-                      width={48}
-                      height={48}
-                      alt="a clock logo"
-                      className="self-start"
-                    />
-                    <p className="w-[50%]  max-w-[700px] ">
-                      Employees can clock in and out with ease using the
-                      ClockPath mobile app
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
+                      <Image
+                        src="/images/icons/sms.svg"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%]  max-w-[700px]">
+                      Submit out-of-office requests directly from the mobile app
                     </p>
                   </div>{" "}
                   <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 items-center`}
                   >
                     {" "}
-                    <Image
-                      src="/images/Frame 1618868008 (1).png"
-                      width={48}
-                      height={48}
-                      alt="a clock logo"
-                      className="self-start"
-                    />
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
+                      <Image
+                        src="/images/icons/tick-square.svg"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
                     <p className="w-[50%] max-w-[700px]">
-                      GPS-based manual entries ensure accuracy for remote teams
+                      HR Admins receive instant notifications for approvals or
+                      rejections
                     </p>
                   </div>{" "}
                   <div
-                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5`}
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 items-center`}
                   >
-                    <div>
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
                       {" "}
                       <Image
-                        src="/images/Frame 1618868008 (2).png"
+                        src="/images/icons/notification.svg"
                         width={48}
                         height={48}
                         alt="a clock logo"
@@ -371,7 +301,88 @@ export default function MyHeader() {
                       />
                     </div>
                     <p className="w-[50%]">
-                      View detailed clock-in and clock-out histories
+                      Stay on top of requests with in-app and email
+                      notifications
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-20 md:space-y-0 md:flex md:justify-between md:gap-10">
+              <div className="space-y-4 leading-tight ">
+                <div className="">
+                  <h1
+                    className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center md:text-left`}
+                  >
+                    <div className="relative inline-block whitespace-nowrap">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Payroll Made{" "}
+                      </span>
+                    </div>
+                    <div className="relative inline-block">
+                      <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                        Simple
+                      </span>
+                    </div>
+                  </h1>
+                  <p
+                    className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center md:text-left`}
+                  >
+                    Streamline Payroll Processing
+                  </p>
+                </div>
+                <div className="space-y-5">
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 mt-[3em] md:mt-0 items-center`}
+                  >
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
+                      <Image
+                        src="/images/icons/sms.svg"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%]  max-w-[700px] ">
+                      Automated payroll overview for HR Admins based on
+                      attendance
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 items-center`}
+                  >
+                    {" "}
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
+                      <Image
+                        src="/images/icons/tick-square.svg"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%] max-w-[700px]">
+                      Ensure payroll consistency by locking it if out-of-office
+                      requests are pending
+                    </p>
+                  </div>{" "}
+                  <div
+                    className={`${open_sans.className} font-normal text-[1rem] text-[#5C5C5C] flex gap-5 items-center`}
+                  >
+                    <div className="bg-[#EAEAEA] p-[.5em] rounded-full">
+                      {" "}
+                      <Image
+                        src="/images/icons/notification.svg"
+                        width={48}
+                        height={48}
+                        alt="a clock logo"
+                        className="self-start"
+                      />
+                    </div>
+                    <p className="w-[50%]">
+                      Generate easy-to-read payroll summaries with adjustments
+                      for time off
                     </p>
                   </div>
                 </div>
@@ -380,12 +391,79 @@ export default function MyHeader() {
                 <div className="bg-[#EFE6FD] rounded-xl h-[400px] flex justify-center">
                   {" "}
                   <Image
-                    src="/images/Dashboard.png"
+                    src="/images/icons/Attendance Summary.svg"
                     width={572}
                     height={407}
                     alt="a clock logo"
                     className="self-end"
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="">
+          <div className="w-[90%] m-[0_auto]">
+            <div className=" mb-10">
+              <h1
+                className={`${playfair_Display.className} font-bold text-[1.5rem] sm:text-[2rem] text-center`}
+              >
+                <div className="relative inline-block whitespace-nowrap">
+                  <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                    Why Choose{" "}
+                  </span>
+                </div>
+                <span> </span>
+                <div className="relative inline-block">
+                  <span className="before:block before:absolute before:left-0 before:bottom-[0.15em] before:h-[0.40em] before:w-full before:bg-[#FFCF88] before:z-[-10]">
+                    {" "}
+                    ClockPath?
+                  </span>
+                </div>
+              </h1>
+              <p
+                className={`${open_sans.className} font-semibold text-[1.5rem] text-[#5C5C5C] text-center`}
+              >
+                Designed for Nigerian Workplaces
+              </p>
+            </div>
+            <div className="space-y-6 md:space-y-0 md:flex md:justify-between md:gap-5">
+              <div>
+                {" "}
+                <Image
+                  src="/images/icons/business-partners-closing-deal 1.svg"
+                  width={639}
+                  height={426}
+                  alt="a clock logo"
+                  className="self-end rounded-xl"
+                />
+              </div>
+              <div className="*:border-2 *:border-red-500 space-y-5 md:self-center">
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#6200EE] w-[48px] h-[70px] rounded-full text-center">
+                    <p className="text-[3rem] text-white">01</p>
+                  </div>
+                  <p className="text-[#5C5C5C] text-[1rem]">
+                    Customizable schedules and reminders to match local work
+                    cultures
+                  </p>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#6200EE] w-[48px] h-[70px] rounded-full text-center">
+                    <p className="text-[3rem] text-white">02</p>
+                  </div>
+                  <p className="text-[#5C5C5C] text-[1rem]">
+                    Integrates seamlessly with your company's payroll processes
+                  </p>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div className="bg-[#6200EE] w-[48px] h-[70px] rounded-full text-center">
+                    <p className="text-[3rem] text-white">03</p>
+                  </div>
+                  <p className="text-[#5C5C5C] text-[1rem]">
+                    Supports multiple employee types: full-time, part-time, or
+                    contractors
+                  </p>
                 </div>
               </div>
             </div>
